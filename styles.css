@@ -87,6 +87,11 @@ button:hover {
     color: #333;
     text-align: center;
 }
+#saldoTerakhir {
+    margin-top: 30px;
+    color: #333;
+    text-align: center;
+}
 footer {
         margin-top: 50px;
     color: #333;
