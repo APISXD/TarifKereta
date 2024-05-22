@@ -31,14 +31,15 @@ label {
     color: #555;
 }
 input#saldo {
-    width: calc(100% - 50px);
+
+    width: calc(100% - 60px);
     margin-left: 20px;
 
 }
 input[type="number"],
 select {
         margin-left: 20px;
-    width: calc(100% - 30px);
+    width: calc(100% - 40px);
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
