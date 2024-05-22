@@ -1,5 +1,4 @@
-
-        var tarifKRL = 3000; // Tarif KRL
+var tarifKRL = 3000; // Tarif KRL
 var tarifMRT = {
   "Lebak Bulus Grab": {
     Fatmawati: 4000,
@@ -260,9 +259,19 @@ document.getElementById("jenisKereta").addEventListener("change", function() {
         var saldoAkhirTotal = saldo - tarifKRL - tarifMRTTotal;
         hasilAksesDiv.innerHTML += "<br>Saldo akhir total (KRL & MRT): " + saldoAkhirTotal;
     }
+    localStorage.setItem('saldoAkhir', saldoAkhir);
+    displaySaldoTerakhir();
 });
 
-
+ function displaySaldoTerakhir() {
+  var saldoTerakhir = localStorage.getItem('saldoAkhir');
+  var saldoTerakhirDiv = document.getElementById("saldoTerakhir")
+  if (saldoTerakhir !== null) {
+    saldoTerakhirDiv.innerHTML = "Saldo akhir yang tersimpan: " + saldoTerakhir;
+  } else {
+    saldoTerakhirDiv.innerHTML = "Belum ada saldo akhir yang tersimpan.";
+  }
+ }
 function populateStasiunOptions() {
     var stasiunOptions = 
     ["Lebak Bulus Grab", "Fatmawati", "Cipete Raya", "Haji Nawi", "Blok A", "Blok M BCA", "ASEAN", "Senayan", "Istora Mandiri", "Bendungan Hilir", "Setiabudi Astra", "Dukuh Atas BNI", "Bundaran HI"]; // Add more if needed
@@ -283,3 +292,6 @@ function populateStasiunOptions() {
         stasiunAkhirSelect.add(option2);
     });
 }
+document.addEventListener("DOMContentLoaded", function() {
+  displaySaldoTerakhir();
+})
